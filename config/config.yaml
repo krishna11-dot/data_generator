@@ -1,0 +1,40 @@
+# =============================================================
+# API Keys — fill these in after getting free keys
+# Groq:       console.groq.com   (free, no credit card)
+# OpenRouter: openrouter.ai      (free, no credit card)
+# =============================================================
+groq_api_key: "your-groq-key-here"
+openrouter_api_key: "your-openrouter-key-here"
+
+# =============================================================
+# MODULE 1: Chunker settings
+# =============================================================
+chunk_size: 500        # tokens per chunk (sweet spot: 400-600)
+chunk_overlap: 50      # overlap between chunks (preserves context at boundaries)
+
+# =============================================================
+# MODULE 2: Generator settings
+# =============================================================
+questions_per_chunk: 3     # how many Q&A pairs per chunk
+total_questions: 100       # target total pairs
+request_delay: 2           # seconds between API calls (respects 30 RPM limit)
+generator_model: "llama-3.3-70b-versatile"   # Groq model (best quality, free)
+generator_provider: "groq"
+
+# =============================================================
+# MODULE 3: Collector — models to test (all FREE)
+# =============================================================
+target_models:
+  - provider: "groq"
+    model: "llama-3.3-70b-versatile"
+  - provider: "openrouter"
+    model: "qwen/qwen3-coder:free"
+  - provider: "openrouter"
+    model: "mistralai/mistral-small-3.1-24b-instruct:free"
+
+# =============================================================
+# MODULE 4: Evaluator settings
+# =============================================================
+llm_judge_model: "llama-3.3-70b-versatile"   # Groq (free)
+llm_judge_provider: "groq"
+pass_threshold: 0.6    # score >= 0.6 = PASS

@@ -1,0 +1,46 @@
+# Environments
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Project Specific
+data/
+!data/knowledge_base/
+# You can ignore the JSON files from generation and evaluations so you don't commit large generated datasets.
+# We are currently ignoring the whole data folder EXCEPT knowledge_base, which we want to keep if empty or seeded.
+# (If you want to track chunks, synthetic datasets, and evaluations, uncomment the above lines and ignore specific ones)
+
+# JSON files in data (If ignoring just JSON files and keeping directories)
+# data/**/*.json
+
+# Mac/OSX
+.DS_Store
